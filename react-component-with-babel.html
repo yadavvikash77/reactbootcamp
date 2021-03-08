@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>React Component with Babel</title>
+        <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="app"></div>
+    </body>
+    <script type="text/babel">
+        const name = "react";
+        const handle = "@reactHandle";
+
+        //create react component in JSX
+        function NameComponent(props){
+            return <h1>{props.name}</h1>;
+        }
+
+        //create react component in JSX
+        function HandleComponent(props){
+            return <h3>{props.handle}</h3>
+        }
+
+        //wrap react component in wrapper component
+        function App(){
+            return (
+                    <div id='container'>
+                        <NameComponent name={name}/>
+                        <HandleComponent handle={handle}/>
+                    </div>
+            );
+        }
+
+        ReactDOM.render(
+            <App/>,
+            document.getElementById('app')
+        );
+
+    </script>
+</html>

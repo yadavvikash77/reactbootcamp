@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Second react app</title>
+        <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    </head>
+    <body>
+        <div id="app"></div>
+    </body>
+    <script>
+        const name = "react";
+        const handle = "@reacthandle";
+        
+        //create first react element
+        const nameElement = React.createElement(
+            'h1',
+            null,
+            name
+        );
+        //create second react element
+        const handleElement = React.createElement(
+            'h3',
+            null,
+            handle
+        );
+        //wrap two react elements into one element
+        const wrapperElement = React.createElement(
+            'div',
+            { id : 'container' },
+            nameElement,
+            handleElement
+        );
+        console.log('wrapperElement', wrapperElement);
+        //render wrapper react element
+        ReactDOM.render(
+            wrapperElement,
+            document.getElementById('app')
+        );
+    </script>
+</html>

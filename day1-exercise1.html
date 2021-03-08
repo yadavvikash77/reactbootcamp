@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>Bootcamp : Day1 Exercise1</title>
+        <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="app"></div>
+        <script type="text/babel">
+            //create Badge component
+            function Badge(props){
+                return (
+                    <div>
+                        <img src = {props.image}/>
+                        <h1>Name : {props.name}</h1>
+                        <h3>Username : {props.username}</h3>
+                    </div>
+                );
+            }
+
+            ReactDOM.render(
+                <Badge name = 'react'
+                username = 'reactuser'
+                image = 'https://avatars0.githubusercontent.com/u/2933430?v=3&s=460'/>,
+                document.getElementById('app')
+            );
+        </script>
+    </body>
+</html>

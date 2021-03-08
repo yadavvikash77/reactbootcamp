@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>React Component</title>
+        <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    </head>
+    <body>
+        <div id="app"></div>
+    </body>
+    <script>
+        
+        //react component is a function/class which optionally accepts inputs and return react element 
+        function NameComponent(props){
+            return React.createElement(
+                'h1',
+                null,
+                props.name
+            );
+        }
+
+        //react component is a function/class which optionally accepts inputs and return react element
+        function HandleComponent(props){
+            return React.createElement(
+                'h3',
+                null,
+                props.handle
+            );
+        }
+
+        //wrap above two react component into one component using React.createElement()
+        //createElement() accepts react element as parameter, not react component
+        const wrapperElement = React.createElement(
+            'div',
+            { id : 'container'},
+            React.createElement(NameComponent, {name : 'react'}),
+            React.createElement(HandleComponent, {handle : '@reactHandle'})
+        );
+        console.log('wrapperElement', wrapperElement);
+        ReactDOM.render(
+            wrapperElement,
+            document.getElementById('app')
+        );
+        
+    </script>
+</html>
